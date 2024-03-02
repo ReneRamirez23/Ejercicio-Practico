@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-2">
+        <h3>Filters</h3>
+        <hr>
+        <!-- limited -->
+        <p>number of items</p>
+        <div class="content">
+            <input type="number"  #numeroInput [attr.max]="maxProduct" min="1"/>
+        </div>
+        <!-- order -->
+        <p>sort by register</p>
+        <div class="content">
+            <div class="btn-group">
+                <a class="btn btn-primary" [class.selected1]="botonSeleccionado1" (click)="toggleSeleccionAsc()">Ascending</a>
+                <a class="btn btn-primary" [class.selected2]="botonSeleccionado2" (click)="toggleSeleccionDesc()">Descending</a>
+            </div>
+        </div>
+        <!-- select -->
+        <p>filter by category</p>
+        <div class="content">
+            <select #categoriaSelect (change)="obtenerSeleccion(categoriaSelect.value)" class="form-select">
+                <option selected>Select opcion</option>
+                @for (category of categories_list; track $index ){
+                    <option>{{category}}</option>
+                }
+            </select>
+        </div>
+        <!-- boton de filtro principal -->
+        <button type="button" class="btn btn-outline-success" (click)="Get_ProductsCondition(numeroInput.value)">Filter</button>
+        <hr>
+        <!-- botones de price -->
+        <p>Filter products by price</p>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="button" (click)="OrderByPriceAsc()">Ascending</button>
+            <button class="btn btn-primary" type="button" (click)="OrderByPriceDesc()">Descending</button>
+        </div>
+        <hr>
+        <!-- botones de price -->
+        <p>Filter products by alphabet</p>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="button" (click)="OrderByAlphabetAsc()">Ascending</button>
+            <button class="btn btn-primary" type="button" (click)="OrderByAlphabetDesc()">Descending</button>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="row" id="cartasContainer">
+            @for (producto of product_list; track $index ){
+                <!-- carta -->
+            <div class="col-md-3 contenedorcarta">
+                <div class="card">
+                    <img class="card-img-top foto" [src]="producto.image">
+                    <div class="card-body">
+                        <h6 class="card-title">{{producto.title}}</h6>
+                        <!-- Button modal -->
+                        <button type="button" class="btn-card btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal_' + producto.id">More Info</button>
+                            <!-- Modal -->
+                            <div class="modal fade" [attr.id]="'Modal_' + producto.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{producto.title}}</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                    <!-- info completa -->
+                                        <img class="card-img-top foto2" [src]="producto.image">
+                                        <h5>Description</h5>
+                                        <p>{{producto.description}}</p>
+                                        <div class="row content">
+                                            <div class="col-6"> <h5>Price</h5> <p>${{producto.price}}</p> </div>
+                                            <div class="col-6 text-end"> <h5>Category</h5> <p>{{producto.category}}</p> </div>
+                                        </div>
+                                        <h5>Reiting</h5>
+                                        <div class="bar1" style="background: white; width: 200px;">
+                                            <div class="bar2" [attr.style]="'height: 35px; width: '+((producto.rating.rate)/5)*100+'%; background: rgb(255, 255, 53);'"></div>
+                                            <div class="bar3" style="height: 35px; background-image: url(../../assets/img/reiting.png); background-size: cover; background-position: center; margin-top: -35px;"></div>
+                                        </div>
+                                        <p><i class="fas fa-users" style="color: #40454f;"></i>  {{producto.rating.count}}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- final modal -->
+                    </div>
+                </div>
+            </div> 
+            <!-- fin de carta -->
+            }
+        </div>
+    </div>
+    
+</div>

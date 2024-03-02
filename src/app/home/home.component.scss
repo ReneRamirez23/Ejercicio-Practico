@@ -1,0 +1,79 @@
+.content{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-family: 'Raleway', sans-serif;
+	letter-spacing:0.1em;
+    color: #282cff;
+    text-shadow: 2px 2px #000000
+}
+
+.btn-success{
+    margin: 5px;
+    
+}
+/*disenio de las cartas*/
+
+.row{
+    margin: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.contenedorcarta{
+    padding: 0;
+    padding: 10px;
+}
+.card{
+    background: #00ad88;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.card-title{
+    color: #ffffff;
+}
+
+.card .foto{
+    height: 275px;
+    object-fit: fill;
+    
+}
+
+.foto2{
+    height: 275px;
+    object-fit: contain;
+
+    
+}
+.cardelements{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px;
+}
+.cardelements p{
+    margin: 0;
+}
+
+.btn-card{
+    background-color: #006d19;
+    border: none;
+}
+
+// group buttons
+
+.selected1 {
+    background-color: rgb(0, 3, 87); 
+    color: white; 
+    border: 1px solid rgb(0, 30, 128); 
+}
+
+.selected2 {
+    background-color: rgb(0, 3, 87);  
+    color: white; 
+    border: 1px solid rgb(0, 30, 128); 
+}
+

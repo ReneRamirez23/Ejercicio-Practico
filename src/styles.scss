@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+body{
+    background:rgb(195, 244, 250);
+}
+
+.titulo{
+    font-family: 'Raleway', sans-serif;
+    font-size:80px;
+	letter-spacing:0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.836);
+    text-shadow: 
+						4px 4px #282cff,
+						10px 10px #000000;
+}
