@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Este proyecto se realizó en Angular en la versión 17.2.2, por si el proyecto llegase a usar funciones no compatibles con versiones anteriores se recomiendo visualizarlo en esa versión.
+
+En la parte izquierda se encuentra el panel con todos los filtros solicitados en la prueba.
+
+en la parte derechas están los productos que proporciona la api.
+
+Los productos se irán modificando según los filtros que se apliquen.
+
